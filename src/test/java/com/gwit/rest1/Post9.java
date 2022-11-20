@@ -4,6 +4,7 @@ import com.gwit.pojos.SecondPojo;
 import com.gwit.pojos.ThirdPojo;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
@@ -17,6 +18,7 @@ public class Post9 {
                 .body(sp).post("https://restful-booker.herokuapp.com/booking");
 
         r3.prettyPrint();
+
 
 
     }
