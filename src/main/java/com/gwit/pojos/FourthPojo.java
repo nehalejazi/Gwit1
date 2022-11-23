@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(value = JsonInclude.Include.NON_NULL)
+//@JsonInclude(value = JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder(alphabetic = true)
 //@JsonIgnoreProperties(value = {"job"})
 public class FourthPojo {

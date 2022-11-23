@@ -7,6 +7,10 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static io.restassured.RestAssured.*;
 
 public class Post10 {
@@ -28,7 +32,12 @@ public class Post10 {
         //FourthPojo fp2 = r4.as(FourthPojo.class);
         //System.out.println(fp2.getJob());
         System.out.println(r4.jsonPath().getInt("id"));
-        r4.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("responseschema.json"));
+        //r4.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("responseschema.json"));
+        try {
+            Files.write((Paths.get(System.getProperty("user.dir")+"/response1.json")), r4.asByteArray());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
